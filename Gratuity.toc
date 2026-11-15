@@ -3,6 +3,8 @@
 ## Notes: Mats, AH prices and a fair tip for any enchant you buy, plus a ready-made "LF enchanter" message.
 ## Author: jnxldr
 ## X-License: MIT
+## X-Curse-Project-ID: 1806915
+## X-Wago-ID: v63Qn7Gb
 ## Version: @project-version@
 ## OptionalDeps: Auctionator
 ## SavedVariables: GratuityDB
