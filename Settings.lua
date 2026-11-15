@@ -3,7 +3,7 @@ local addonName, ns = ...
 local Settings_ = {}
 ns.Settings = Settings_
 
-local DEFAULT_TEMPLATE = "LF {link}, my mats, tipping {pct}% of AH cost ({tip})" -- same as Core.lua's default
+local DEFAULT_TEMPLATE = "LF {link}, my mats, tipping {tip} ({pct}% of AH cost)" -- same as Core.lua's default
 local ROUNDING = { { "smart", "Sensible (step grows with the tip)" }, { "none", "No rounding" }, { "1s", "Round up to 1s" },
 	{ "10s", "Round up to 10s" }, { "1g", "Round up to 1g" } }
 
