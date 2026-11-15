@@ -9,3 +9,4 @@ ignore:
   - .gitignore
   - .pkgmeta
   - BUILDING.md
+  - docs

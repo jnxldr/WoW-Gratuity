@@ -6,6 +6,8 @@ and writes the "LF enchanter" message for you.
 Made for **World of Warcraft: Forever**, for players who *buy* enchants: you bring the mats, the enchanter brings the recipe,
 and you tip them for it.
 
+![The Gratuity window: enchant list on the left; the selected enchant's suggested tip, mats and advert message on the right](https://raw.githubusercontent.com/jnxldr/WoW-Gratuity/main/docs/screenshots/gratuity-window.png)
+
 ## What it does
 
 - **All enchants in one window.** Search by enchant, slot or mat name, filter by slot, sort by slot, name, cheapest or dearest.
@@ -24,6 +26,16 @@ and you tip them for it.
   need in its Shopping tab. Without Auctionator, *Search AH* puts the first mat in the AH search box.
 - **Click an enchant link in chat** (an enchanter's `[Enchanting: ...]` post) and Gratuity opens on that enchant.
 - Minimap button and add-on compartment entry: left-click for the window, right-click for the settings.
+
+## Screenshots
+
+**Check mat prices** under the AH window looks up every enchanting mat:
+
+![The Check mat prices button under the auction house window, with its tooltip](https://raw.githubusercontent.com/jnxldr/WoW-Gratuity/main/docs/screenshots/gratuity-ah-check.png)
+
+Settings in Options > AddOns > Gratuity:
+
+![The Gratuity settings panel: tip, price age, message template, advert channels, buttons and AH prices](https://raw.githubusercontent.com/jnxldr/WoW-Gratuity/main/docs/screenshots/gratuity-settings.png)
 
 ## Commands
 
