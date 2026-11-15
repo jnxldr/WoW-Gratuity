@@ -72,8 +72,12 @@ local function Dump(spellID)
 		print(("   Mats at AH: %s%s"):format(Money(base), incomplete))
 		print(("   Tip at %s%%: %s  ->  mats + tip %s"):format(pct, Money(tip), Money(base + tip)))
 		print("   " .. Price.AgeLine())
+		local GetRecipeLink = C_TradeSkillUI and C_TradeSkillUI.GetRecipeLink
+		local ok, link = false, nil
+		if GetRecipeLink then ok, link = pcall(GetRecipeLink, spellID) end
 		local msg, trimmed = Tip.Message(ns.db.template, {
 			enchant = name or ("spell " .. spellID),
+			link = ok and type(link) == "string" and link or name or ("spell " .. spellID),
 			mats = table.concat(matText, ", "),
 			pct = pct,
 			tip = Tip.MoneyText(tip),

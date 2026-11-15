@@ -3,7 +3,7 @@ local addonName, ns = ...
 local Settings_ = {}
 ns.Settings = Settings_
 
-local DEFAULT_TEMPLATE = "LF {enchant}, my mats, tipping {pct}% of AH cost ({tip})"
+local DEFAULT_TEMPLATE = "LF {link}, my mats, tipping {pct}% of AH cost ({tip})" -- same as Core.lua's default
 local ROUNDING = { { "smart", "Sensible (step grows with the tip)" }, { "none", "No rounding" }, { "1s", "Round up to 1s" },
 	{ "10s", "Round up to 10s" }, { "1g", "Round up to 1g" } }
 
@@ -157,7 +157,7 @@ local function Build()
 		template:SetText(DEFAULT_TEMPLATE)
 		Changed()
 	end)
-	Hint(content, 24, -298, "{enchant} {link} {mats} {pct} {tip} {base} {age} are filled in. The Gratuity window shows the result.")
+	Hint(content, 24, -298, "{link} = clickable enchant link, {enchant} = its name; also {mats} {pct} {tip} {base} {age}.")
 
 	Heading("Advertise in (one button each in the Gratuity window)", -326)
 	local channelBoxes = {}

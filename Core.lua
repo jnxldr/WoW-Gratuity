@@ -14,7 +14,7 @@ local DEFAULTS = {
 	tipPct = 10, -- the window remembers the last % picked (user 2026-11-14: default 10)
 	rounding = "smart", -- smart | none | 1s | 10s | 1g (Tip.Compute)
 	minTip = 0, -- copper
-	template = "LF {enchant}, my mats, tipping {pct}% of AH cost ({tip})",
+	template = "LF {link}, my mats, tipping {pct}% of AH cost ({tip})", -- 2.1: {link} = the clickable enchanting link
 	channels = { TradeLocal = true }, -- where to advertise, by channel name (or SAY / PARTY / GUILD); user, 2026-11-13
 	ageWarnHours = 6, -- price age colours: white below, amber up to ageBadHours, red above
 	ageBadHours = 24,
@@ -58,6 +58,14 @@ frame:SetScript("OnEvent", function(_, event, arg1)
 		if not ns.db.migrated110 then
 			ns.db.tipPct, ns.db.rounding = DEFAULTS.tipPct, DEFAULTS.rounding
 			ns.db.migrated110 = true
+		end
+		-- 2.1.0: the default message posts the enchant as a link (user, 2026-11-15). A template still equal to the old
+		-- default switches once; one you wrote yourself is kept.
+		if not ns.db.migrated210 then
+			if ns.db.template == "LF {enchant}, my mats, tipping {pct}% of AH cost ({tip})" then
+				ns.db.template = DEFAULTS.template
+			end
+			ns.db.migrated210 = true
 		end
 		ns.db.migrated100, ns.db.icon = nil, nil -- retired settings
 		ns.Launcher.Init()

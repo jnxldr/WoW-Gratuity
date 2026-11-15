@@ -14,8 +14,8 @@ and you tip them for it.
   how many you have, and what you **still need to buy**. Hover a mat for details; right-click it to set your own price.
 - **A tip you can stand behind.** A % of the mats cost: 10 / 15 / 20 / 25 % buttons or any custom %; the last one you picked is
   remembered. Rounded sensibly (whole gold for big tips, copper for tiny ones), with an optional minimum tip.
-- **Ready-made message.** "LF Enchant Boots - Minor Stamina, my mats, tipping 10% of AH cost (8c)". Edit the template in the
-  settings. One button per channel (TradeLocal by default; Say, Party, Guild or any joined channel) opens the chat box with the
+- **Ready-made message.** "LF [Enchanting: Enchant Boots - Minor Stamina], my mats, tipping 10% of AH cost (8c)", with the
+  enchant as a clickable link. Edit the template in the settings. One button per channel (TradeLocal by default; Say, Party, Guild or any joined channel) opens the chat box with the
   message: you check it and press Enter. Gratuity never sends anything by itself.
 - **Its own AH prices, no other add-on needed.** At the AH, Gratuity checks the selected enchant's mats by itself, one search at a
   time and only while the AH is free. The **Check mat prices** button under the AH window checks all mats in about a minute.

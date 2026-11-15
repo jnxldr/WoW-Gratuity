@@ -59,7 +59,7 @@ function Tip.MoneyText(copper)
 	return table.concat(parts, " ")
 end
 
--- Fills {enchant} {mats} {pct} {tip} {base} {age}; unknown tokens stay as typed. Trimmed to 255 characters.
+-- Fills {link} {enchant} {mats} {pct} {tip} {base} {age}; unknown tokens stay as typed. Trimmed to 255 characters.
 function Tip.Message(template, fields)
 	local msg = template:gsub("{(%w+)}", function(key)
 		local v = fields[key]

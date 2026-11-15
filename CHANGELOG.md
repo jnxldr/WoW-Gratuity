@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.0
+- The advert message now posts the enchant as a **clickable link** (`[Enchanting: Enchant Boots - Minor Stamina]`): the
+  default template uses `{link}`. A template still set to the old default switches once; your own templates are kept.
+- `/gratuity dump` fills in `{link}` too; the settings explain `{link}` and `{enchant}`.
+
 ## 2.0.3
 - First release on CurseForge and Wago.
 - No changes in game. README: what Gratuity does, commands, and how it was made.
