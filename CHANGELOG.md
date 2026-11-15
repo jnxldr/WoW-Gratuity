@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.3
+- First release on CurseForge and Wago.
+- No changes in game. README: what Gratuity does, commands, and how it was made.
+
 ## 2.0.2
 - Enchant Chest - Living Stats removed: its mats don't exist in Forever (179 enchants now).
 - The full price check's summary tells mats the game doesn't know apart from mats the AH didn't answer for.

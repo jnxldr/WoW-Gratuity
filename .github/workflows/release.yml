@@ -1,11 +1,12 @@
-# Packages the add-on and uploads it to CurseForge, Wago, WoWInterface and a GitHub release when a version tag is pushed.
+# Packages the add-on and uploads it to CurseForge, Wago (and WoWInterface, if set up) and a GitHub release when a version
+# tag such as 2.0.3 is pushed (no "v": the tag becomes ## Version as it is).
 # Project IDs come from the .toc (X-Curse-Project-ID, X-Wago-ID, X-WoWI-ID); tokens from the repo secrets.
 name: Release
 
 on:
   push:
     tags:
-      - "v*"
+      - "[0-9]*"
 
 permissions:
   contents: write # create the GitHub release
@@ -20,7 +21,7 @@ jobs:
       WOWI_API_TOKEN: ${{ secrets.WOWI_API_TOKEN }}
       GH_API_TOKEN: ${{ secrets.GITHUB_TOKEN }} # built in, no setup
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0 # the packager reads the tags
 

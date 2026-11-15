@@ -5,7 +5,8 @@ from source (the version then shows as `@project-version@`).
 
 ## Releasing
 1. Add a section for the new version at the top of `CHANGELOG.md` and commit.
-2. Tag and push: `git tag v2.0.3` then `git push origin main v2.0.3`.
+2. Tag and push: `git tag -a 2.0.4 -m "Gratuity 2.0.4"` then `git push origin main 2.0.4` (no `v`: the tag becomes `## Version`
+   as it is; tags before 2.0.3 had one).
 3. The *Release* workflow (`.github/workflows/release.yml`) runs the
    [BigWigs packager](https://github.com/BigWigsMods/packager): it writes the tag into `## Version`, builds
    `Gratuity-<version>.zip` (folder `Gratuity/`, without the files listed under `ignore` in `.pkgmeta`) and uploads it to
