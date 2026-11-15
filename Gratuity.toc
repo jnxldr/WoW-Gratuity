@@ -1,0 +1,31 @@
+## Interface: 16001
+## Title: Gratuity
+## Notes: Mats, AH prices and a fair tip for any enchant you buy, plus a ready-made "LF enchanter" message.
+## Author: jnxldr
+## X-License: MIT
+## Version: @project-version@
+## OptionalDeps: Auctionator
+## SavedVariables: GratuityDB
+## IconTexture: Interface\AddOns\Gratuity\Media\Icon
+## AddonCompartmentFunc: Gratuity_OnAddonCompartmentClick
+## AddonCompartmentFuncOnEnter: Gratuity_OnAddonCompartmentEnter
+## AddonCompartmentFuncOnLeave: Gratuity_OnAddonCompartmentLeave
+
+Libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+Libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+Libs\LibDBIcon-1.0\LibDBIcon-1.0.lua
+
+Data.lua
+Core.lua
+Recipes.lua
+Price.lua
+AH.lua
+Vendor.lua
+Tip.lua
+Commands.lua
+Launcher.lua
+Advertise.lua
+Settings.lua
+UI_List.lua
+UI_Detail.lua

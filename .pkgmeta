@@ -1,0 +1,11 @@
+package-as: Gratuity
+
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown
+
+ignore:
+  - .github
+  - .gitignore
+  - .pkgmeta
+  - BUILDING.md
