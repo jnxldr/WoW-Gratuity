@@ -46,4 +46,12 @@ and you tip them for it.
   from the game while you play, so a patch that changes a recipe shows up at once.
 - Bundled libraries: LibStub, CallbackHandler-1.0, LibDataBroker-1.1, LibDBIcon-1.0 (licences in `Libs/LICENSES.txt`).
 
+## Transparency
+This add-on was made with [Claude Code](https://claude.com/claude-code), Anthropic's AI coding assistant. Claude worked out
+how the Forever client lists enchants, reads recipes and answers auction house searches (designing the in-game tests that
+showed it), generated the enchant list from the game's own data, and wrote the code, documentation and icon; I decided what
+the add-on should do and how it should look, reviewed the changes, and tested each version in game.
+
+Made for World of Warcraft: Forever 1.60.1 (Interface 16001).
+
 Licence: MIT (see `LICENSE`). Changes: see `CHANGELOG.md`.
