@@ -5,7 +5,7 @@ ns.Advertise = Advertise
 
 local OpenChat = ChatFrame_OpenChat or (ChatFrameUtil and ChatFrameUtil.OpenChat)
 
--- Fixed targets first (Say is the testing default), then joined channels by name (their numbers differ per character).
+-- Fixed targets first (Say, Party, Guild), then joined channels by name (their numbers differ per character).
 local FIXED = {
 	{ key = "SAY", label = "Say", slash = "/s" },
 	{ key = "PARTY", label = "Party", slash = "/p", available = function() return IsInGroup() end, hint = "you're not in a group" },

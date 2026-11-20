@@ -21,8 +21,8 @@ function Tip.Base(mats)
 	return total, priced, #mats, oldest, lines
 end
 
--- "smart" (default from 1.1, user 2026-11-14): round up to a coin a person would hand over, with the step growing with
--- the tip so it never swallows the % (1.1.1: below 10s the step was 1s, so 10 % and 15 % of a 9c enchant were both 1s).
+-- "smart" (the default): round up to a coin a person would hand over, with the step growing with the tip so it never
+-- swallows the % (a fixed 1s step would make 10 % and 15 % of a 9c enchant both 1s).
 local function SmartStep(raw)
 	if raw >= 100000 then return 10000 end -- 10g and up: whole gold
 	if raw >= 10000 then return 1000 end -- 1g to 10g: 10s
@@ -39,7 +39,7 @@ function Tip.Compute(base, pct, rounding, minTip)
 	return tip
 end
 
--- Money with coin icons for the UI and printed lines. The global GetCoinTextureString is nil on Forever (2026-11-13);
+-- Money with coin icons for the UI and printed lines. The global GetCoinTextureString is nil on Forever;
 -- GetMoneyString is what Auctionator uses there, C_CurrencyInfo.GetCoinTextureString the fallback.
 function Tip.MoneyIcons(copper)
 	copper = floor(copper + 0.5)

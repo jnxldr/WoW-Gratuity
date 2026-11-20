@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.2
+- No more login message about the game build: Gratuity reads names, icons and mats from the game, so a new game build needs
+  nothing from you. `/gratuity check` still compares the shipped list with the game's.
+- Enchant list checked against game build 1.60.1.70959 (unchanged).
+
 ## 2.1.1
 - Default message puts the tip amount first: "LF [Enchanting: ...], my mats, tipping 8c (10% of AH cost)". A template still
   set to an earlier default switches once; your own templates are kept.

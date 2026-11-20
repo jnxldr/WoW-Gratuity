@@ -4,7 +4,7 @@ local addonName, ns = ...
 local Launcher = {}
 ns.Launcher = Launcher
 
--- Gratuity's own icon (drawn by tools\make_icon.py: gold coin with the enchanting star); same file as ## IconTexture.
+-- Gratuity's own icon (gold coin with the enchanting star); same file as ## IconTexture.
 local ICON = "Interface\\AddOns\\Gratuity\\Media\\Icon"
 ns.ICON = ICON -- also on the AH window's "Check mat prices" button (AH.lua)
 

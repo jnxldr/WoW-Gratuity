@@ -101,7 +101,7 @@ end
 
 -- Seconds since the last full scan or check started (Auctionator's scan or Gratuity's "Check mat prices"; nil if none)
 -- and since the newest price came in (ours, or an Auctionator update; nil if never).
--- Forever uses the modern AH (checked 2026-11-13): Auctionator's auto/summary scan saves TimeOfLastBrowseScan, its
+-- Forever uses the modern AH: Auctionator's auto/summary scan saves TimeOfLastBrowseScan, its
 -- replicate scan TimeOfLastReplicateScan (legacy AH: TimeOfLastGetAllScan). All are set when a scan starts; newest wins.
 local SCAN_KEYS = { "TimeOfLastBrowseScan", "TimeOfLastReplicateScan", "TimeOfLastGetAllScan" }
 

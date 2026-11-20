@@ -114,7 +114,7 @@ local function CmdCheck()
 		end
 		if #ids > MAX_LIST then print(("      ... and %d more"):format(#ids - MAX_LIST)) end
 	end
-	List("differ (rerun tools/gen_enchant_data.py)", changed)
+	List("differ (Gratuity uses the game's mats)", changed)
 	List("no client reagents (the list's are used)", noLive)
 	List("no name from the client", noName)
 end

@@ -11,12 +11,12 @@ function ns.Print(...)
 end
 
 local DEFAULTS = {
-	tipPct = 10, -- the window remembers the last % picked (user 2026-11-14: default 10)
+	tipPct = 10, -- the window remembers the last % picked
 	rounding = "smart", -- smart | none | 1s | 10s | 1g (Tip.Compute)
 	minTip = 0, -- copper
-	-- 2.1: {link} = the clickable enchanting link; 2.1.1: the tip amount first, the % in brackets (user, 2026-11-15)
+	-- 2.1: {link} = the clickable enchanting link; 2.1.1: the tip amount first, the % in brackets
 	template = "LF {link}, my mats, tipping {tip} ({pct}% of AH cost)",
-	channels = { TradeLocal = true }, -- where to advertise, by channel name (or SAY / PARTY / GUILD); user, 2026-11-13
+	channels = { TradeLocal = true }, -- where to advertise, by channel name (or SAY / PARTY / GUILD)
 	ageWarnHours = 6, -- price age colours: white below, amber up to ageBadHours, red above
 	ageBadHours = 24,
 	manualPrices = {}, -- [itemID] = copper: your own price for a mat (right-click it in the detail window)
@@ -56,12 +56,12 @@ frame:SetScript("OnEvent", function(_, event, arg1)
 		ns.db = GratuityDB
 		ApplyDefaults(ns.db, DEFAULTS)
 		-- 1.0.2: channels ticked while testing (0.x) are reset once to the release default, whatever they were
-		-- (1.0.0 only reset a Say-only choice, user 2026-11-14). What you tick after this is kept.
+		-- (1.0.0 only reset a Say-only choice). What you tick after this is kept.
 		if not ns.db.migrated102 then
 			ns.db.channels = CopyTable(DEFAULTS.channels)
 			ns.db.migrated102 = true
 		end
-		-- 1.1.0: default tip 10 % with sensible rounding (user 2026-11-14); set once, later changes are kept.
+		-- 1.1.0: default tip 10 % with sensible rounding; set once, later changes are kept.
 		if not ns.db.migrated110 then
 			ns.db.tipPct, ns.db.rounding = DEFAULTS.tipPct, DEFAULTS.rounding
 			ns.db.migrated110 = true
@@ -76,11 +76,7 @@ frame:SetScript("OnEvent", function(_, event, arg1)
 		ns.Launcher.Init()
 	elseif event == "PLAYER_LOGIN" then
 		ns.Price.Init()
-		local version, build = GetBuildInfo()
-		local client = version .. "." .. build
-		if client ~= ns.DataBuild then
-			ns.Print(("enchant list is from build %s, the client is %s. /gratuity check shows changed mats; "
-				.. "rerun tools/gen_enchant_data.py to update."):format(ns.DataBuild, client))
-		end
+		-- No login message about the game build: names, icons and mats are read from the game while you play, so a
+		-- newer build needs nothing from the player. /gratuity check compares the shipped list with the game's.
 	end
 end)

@@ -9,7 +9,7 @@ local function SortMats(mats)
 end
 
 -- Reagents from the client: C_TradeSkillUI.GetRecipeSchematic works for recipes the character doesn't know
--- (checked on Forever 2026-11-13). Returns { {itemID, count}, ... } sorted by itemID, or nil.
+-- (also on Forever). Returns { {itemID, count}, ... } sorted by itemID, or nil.
 function Recipes.Live(spellID)
 	local GetSchematic = C_TradeSkillUI and C_TradeSkillUI.GetRecipeSchematic
 	if not GetSchematic then return nil end

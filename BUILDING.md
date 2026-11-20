@@ -4,9 +4,12 @@ The repository root is the add-on folder: copy it to `World of Warcraft\_forever
 from source (the version then shows as `@project-version@`).
 
 ## Releasing
-1. Add a section for the new version at the top of `CHANGELOG.md` and commit.
-2. Tag and push: `git tag -a 2.0.4 -m "Gratuity 2.0.4"` then `git push origin main 2.0.4` (no `v`: the tag becomes `## Version`
-   as it is; tags before 2.0.3 had one).
+1. Add a section for the new version at the top of `CHANGELOG.md` (`## 2.1.2`) and test in game.
+2. Run `.\release.ps1 2.1.2` (PowerShell; `-DryRun` shows what it would do). It checks the version, branch, changelog
+   section, commit email and Lua strings (`tools/lua_strcheck.py`, needs Python), asks, commits what is left, pushes `main`,
+   creates and pushes the tag, then follows the upload (with the GitHub CLI `gh`). By hand it is
+   `git tag -a 2.1.2 -m "Gratuity 2.1.2"` and `git push origin main 2.1.2`. Tags have no `v` (the tag becomes `## Version` as
+   it is; tags before 2.0.3 had one).
 3. The *Release* workflow (`.github/workflows/release.yml`) runs the
    [BigWigs packager](https://github.com/BigWigsMods/packager): it writes the tag into `## Version`, builds
    `Gratuity-<version>.zip` (folder `Gratuity/`, without the files listed under `ignore` in `.pkgmeta`) and uploads it to

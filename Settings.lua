@@ -9,7 +9,7 @@ local ROUNDING = { { "smart", "Sensible (step grows with the tip)" }, { "none", 
 
 local panel = CreateFrame("Frame")
 panel.name = addonName
--- 2.0: everything sits in a scroll frame (the channel list grows with your joined channels, user 2026-11-15: cut off)
+-- Everything sits in a scroll frame: the channel list grows with your joined channels.
 local scroll = CreateFrame("ScrollFrame", nil, panel, "UIPanelScrollFrameTemplate")
 scroll:SetPoint("TOPLEFT", 0, -4)
 scroll:SetPoint("BOTTOMRIGHT", -28, 4)
@@ -27,7 +27,7 @@ local function Changed()
 	if ns.Detail then ns.Detail.Update() end
 end
 
--- Secondary text: the stock disabled grey is hard to read on the panel (user), so a light grey like the main window's.
+-- Secondary text: the stock disabled grey is hard to read on the panel, so a light grey like the main window's.
 local function Hint(parent, x, y, text)
 	local fs = parent:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
 	fs:SetTextColor(0.82, 0.82, 0.82)

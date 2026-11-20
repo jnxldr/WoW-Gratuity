@@ -1,6 +1,6 @@
--- Own AH prices (2.0, no Auctionator needed). Tested on Forever 2026-11-14 (plans\plan-enchant-gratuity.md, "In-game AH
--- tests"): browse searches sent from add-on code are answered in ~0.1 s, with or without a click; the AH has one request
--- queue shared with the AH window and Auctionator, so we send one search at a time and only when it is free.
+-- Own AH prices (2.0, no Auctionator needed). On Forever, browse searches sent from add-on code are answered in ~0.1 s,
+-- with or without a click; the AH has one request queue shared with the AH window and Auctionator, so we send one
+-- search at a time and only when it is free.
 -- Three ways prices come in:
 --   1. our own searches: Blizzard's own browse query for one mat's exact name, minPrice of that item = cheapest unit
 --   2. any browse results someone else asked for (Auctionator's scans, your own searches in the AH window)
@@ -17,7 +17,7 @@ local ANSWER_TIMEOUT = 10 -- seconds to wait for an answer before moving on
 local FRESH_SECONDS = 10 * 60 -- the automatic re-check skips mats priced this recently
 local NAME_TRIES = 20 -- passes (0.25 s each) to wait for an uncached item name before skipping the mat
 
--- Blizzard's own query for the AH search box, as captured in game (/dump of SendBrowseQuery's argument, 2026-11-14):
+-- Blizzard's own query for the AH search box (the argument its search box passes to SendBrowseQuery):
 -- sorts Price then Name, levels 0, its default filters. Built fresh for each search.
 local function Query(name)
 	return {
